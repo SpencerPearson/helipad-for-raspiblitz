@@ -44,6 +44,7 @@ you should see your bonus.helipad.sh script in green with -rwxr-xr-x as the perm
 Go back to your root directory and call the Helipad script passing the "on" option:
 
 `cd ~`
+
 `./config.scripts/bonus.helipad.sh on`
 
 Now sit back and wait, the script will now start installing Helipad!
