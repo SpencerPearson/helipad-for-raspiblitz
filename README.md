@@ -59,13 +59,13 @@ If you're having trouble finding the specific web address you can call the menu 
 
 `./config.scripts/bonus.helipad.sh menu`
 
-This will display the HTTP address and the TOR hidden service address. HTTPS support will be coming soon!
+This will display the HTTP address. HTTPS and TOR hidden service support will be coming soon!
 
 Your Raspiblitz should be building a SQLite database of all your boost history, so you might have to wait for your database to finish building before the boosts are displayed.
 
 ## NOTES:
 
-This script runs Helipad constantly as a systemd service. It checks your node for invoices every 9 seconds for new boost acitivity. This means once you have Helipad installed, you can open it from any browser on any device on your local network.
+This script installs Helipad and sets it up to run constantly on your node as a systemd service. Helipad checks your node for invoices every 9 seconds and adds new boost acitivity to its database. This means once you have Helipad installed, you can open it from any browser on any device on your local network and see boosts land in real time.
 
 Test it out! New boostagrams AND boosts should appear in 30 seconds or less. For podcasters with live shows, you can keep Helipad opened to listen for the "pew" sound as boosts come in.
 
