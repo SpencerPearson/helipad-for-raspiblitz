@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #https://github.com/Podcastindex-org/helipad
-HELIPAD_VERSION="v0.1.4"
+HELIPAD_VERSION="v0.1.6"
 HELIPAD_USER=helipad
 HELIPAD_HOME_DIR=/home/$HELIPAD_USER
 HELIPAD_DATA_DIR=/mnt/hdd/app-data/helipad
@@ -44,8 +44,8 @@ if [ "$1" = "menu" ]; then
     # Info with TOR
     /home/admin/config.scripts/blitz.display.sh qr "${toraddress}"
     whiptail --title " Helipad " --msgbox "Open in your local web browser:
-http://${localip}:2112\n
-https://${localip}:2113 with Fingerprint:
+http://${localip}:${HELIPAD_HTTP_PORT}\n
+https://${localip}:${HELIPAD_HTTPS_PORT} with Fingerprint:
 ${fingerprint}\n\n
 Hidden Service address for TOR Browser (see LCD for QR):\n${toraddress}
 " 16 67
@@ -53,8 +53,8 @@ Hidden Service address for TOR Browser (see LCD for QR):\n${toraddress}
   else
     # Info without TOR
     whiptail --title " Helipad " --msgbox "Open in your local web browser & accept self-signed cert:
-http://${localip}:2112\n
-https://${localip}:2113 with Fingerprint:
+http://${localip}:${HELIPAD_HTTP_PORT}\n
+https://${localip}:${HELIPAD_HTTPS_PORT} with Fingerprint:
 ${fingerprint}\n
 Use your Password B to login.\n
 Activate TOR to access the web interface from outside your local network.
@@ -121,10 +121,6 @@ if [ "$1" = "1" ] || [ "$1" = "on" ]; then
     sudo chown $HELIPAD_USER: $HELIPAD_DATA_DIR
     sudo -u $HELIPAD_USER touch $HELIPAD_DB
 
-    sudo ln -fs  $HELIPAD_MACAROON $HELIPAD_BUILD_DIR
-    sudo ln -fs  $HELIPAD_CERT $HELIPAD_BUILD_DIR
-    sudo ln -fs  $HELIPAD_DB $HELIPAD_BUILD_DIR
-
     #################
     # FIREWALL
     #################
@@ -154,6 +150,9 @@ User=$HELIPAD_USER
 Restart=always
 TimeoutSec=120
 RestartSec=30
+Environment="LND_TLSCERT=$HELIPAD_CERT"
+Environment="LND_ADMINMACAROON=$HELIPAD_MACAROON"
+Environment="HELIPAD_DATABASE_DIR=$HELIPAD_DB"
 [Install]
 WantedBy=multi-user.target
 " | sudo tee /etc/systemd/system/helipad.service
