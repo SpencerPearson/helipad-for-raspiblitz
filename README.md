@@ -22,21 +22,21 @@ Once you're in, you'll be greeted by the Raspiblitz main menu:
 We'll need to exit the main menu and enter the cli. To do this, select < Exit > or ctrl C
 
 ## 2. Add the Helipad install script to your config.scripts directory
-In Raspiblitz, all the install scripts for special tools live in the config.scripts directory. We'll cd to config.scripts and add our bonus.helipad.sh file to that directory using wget like this:
+In Raspiblitz, all the install scripts for special tools live in the config.scripts directory. We'll cd to config.scripts and add our install-helipad.sh file to that directory using wget like this:
 
 `cd config.scripts`
 
-`wget https://raw.githubusercontent.com/SpencerPearson/helipad-for-raspiblitz/master/bonus.helipad.sh`
+`wget https://raw.githubusercontent.com/SpencerPearson/helipad-for-raspiblitz/master/install-helipad.sh`
 
 We'll need to make sure we can execute this script:
 
-`chmod +x bonus.helipad.sh`
+`chmod +x install-helipad.sh`
 
 if you want to make sure the script is ready, call:
 
 `ls -l`
 
-you should see your bonus.helipad.sh script in green with -rwxr-xr-x as the permissions:
+you should see your install-helipad.sh script in green with -rwxr-xr-x as the permissions:
 
 ![config.scripts directory](https://i.ibb.co/dLmSxdp/Screenshot-2021-12-16-160543.png)
 
@@ -45,7 +45,7 @@ Go back to your root directory and call the Helipad script passing the "on" opti
 
 `cd ~`
 
-`./config.scripts/bonus.helipad.sh on`
+`./config.scripts/install-helipad.sh on`
 
 Now sit back and wait, the script will now start installing Helipad!
 
@@ -57,7 +57,7 @@ For now, you'll still need to be connected to the local network in order to see 
 
 If you're having trouble finding the specific web address you can call the menu function of the helipad script from the root directory like this:
 
-`./config.scripts/bonus.helipad.sh menu`
+`./config.scripts/install-helipad.sh menu`
 
 This will display the HTTP address. HTTPS and TOR hidden service support will be coming soon!
 
