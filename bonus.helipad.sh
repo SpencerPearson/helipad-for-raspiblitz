@@ -164,8 +164,8 @@ WantedBy=multi-user.target
 
     # Hidden Service for Helipad if Tor is active
     if [ "${runBehindTor}" = "on" ]; then
-        # make sure to keep in sync with internet.tor.sh script
-        /home/admin/config.scripts/internet.hiddenservice.sh helipad 80 $HELIPAD_HTTP_PORT 443 $HELIPAD_HTTPS_PORT
+        # make sure to keep in sync with tor.onion-service.sh script
+        /home/admin/config.scripts/tor.onion-service.sh helipad 80 $HELIPAD_HTTP_PORT 443 $HELIPAD_HTTPS_PORT
     fi
 
     source /home/admin/raspiblitz.info
