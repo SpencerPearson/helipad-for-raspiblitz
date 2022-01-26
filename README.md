@@ -69,4 +69,4 @@ This script installs Helipad and sets it up to run constantly on your node as a 
 
 Test it out! New boostagrams AND boosts should appear in 30 seconds or less. For podcasters with live shows, you can keep Helipad opened to listen for the "pew" sound as boosts come in.
 
-For questions specific to the installation on a Raspiblitz, feel free to [open an issue](https://github.com/SpencerPearson/helipad-for-raspiblitz/issues) in this repository. For more info about the underlying Helipad code please see the [official Helipad repo](https://github.com/Podcastindex-org/helipad) from Podcast Index.
+For questions specific to the installation on a Raspiblitz, feel free to [open an issue](https://github.com/SpencerPearson/helipad-for-raspiblitz/issues) in this repository. For more info about the underlying Helipad code and its implementation on systems outside of Raspiblitz please see the [official Helipad repo](https://github.com/Podcastindex-org/helipad) from Podcast Index.
