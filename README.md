@@ -1,8 +1,8 @@
 # helipad-for-raspiblitz
 Install Podcast Index's [Helipad app](https://github.com/Podcastindex-org/helipad) on your [Raspiblitz](https://github.com/rootzoll/raspiblitz/) node!
 
-## A WORK IN PROGRESS
-This install script is part of a larger project to make Helipad an installable service in Raspiblitz's "Additional Services" menu. For now, since podcasters are eager to have a way to read their boostagrams ASAP, we have decided to release this current stable version of the install script. Below we will walk you through the setup step-by-step, but we aim to make these steps simpler over time and the front-end interface you see in the browser will also improve in future releases.
+## UPDATED AS OF RASPIBLITZ v1.7.2:
+This install script was part of a larger project to make Helipad an installable service in Raspiblitz's "Additional Services" menu. That particular mission has been accomplished, and now you can install Helipad directly from the UI. For those still interested in installing Raspiblitz manually, below we will walk you through the setup step-by-step.
 
 ## This README is written for complete beginners
 There are many ways to execute this simple shell script and install Helipad. If you're a Raspiblitz user or familiar with Debian in general you may already be comfortable with the process. Just get the shell script onto your Raspiblitz (preferably in /home/admin/configs.scripts, although it should work from anywhere) and execute it. At the risk of being redundant, this guide is written to be exhaustive and makes no assumptions as to user's prior knowledge.
